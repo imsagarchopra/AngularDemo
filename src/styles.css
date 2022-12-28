@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+h1{
+    color:#369;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+table {
+  color: #369;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+  font-size: large;
+  border-collapse:collapse;
+}
+
+td {
+  border: 1px solid black;
+}
