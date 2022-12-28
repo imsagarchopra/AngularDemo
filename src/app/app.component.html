@@ -1,6 +1,15 @@
 <div>
-  <h1>
-    {{pageHeader}}
-  </h1>
+  <h1>{{pageHeader}}</h1>
+
+  <h1>{{'Header = ' + pageHeader}}</h1>
+
+  <h1>{{10 + 20 + 30}}</h1>
+
+  <h1>{{pageHeader ? pageHeader : 'No Header'}}</h1>
+
+  <img src="{{imagePath}}"/>
+
+  <h1>{{'Full Name = ' + getFullName()}}</h1>
+
   <my-employee></my-employee>
 </div>
