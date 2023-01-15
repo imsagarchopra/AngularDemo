@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -29,10 +30,13 @@ import { Component } from '@angular/core';
   //          You entered : {{name}}
   //          `
 
-  template: `Name : <input [(ngModel)] = 'name'>
-            <br/>
-            You entered : {{name}}
-            `
+  //template: `Name : <input [(ngModel)] = 'name'>
+  //          <br/>
+  //          You entered : {{name}}
+  //          `
+
+  // NgFor
+  template: `<list-employee></list-employee>`
              
 })
 export class AppComponent {
