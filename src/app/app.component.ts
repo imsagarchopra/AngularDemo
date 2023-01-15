@@ -21,8 +21,18 @@ import { Component } from '@angular/core';
   //          `
 
   //Event Binding
-  template: `<my-employee></my-employee>`
-            
+  /*template: `<my-employee></my-employee>`*/
+
+  //Two Way Data Binding
+  //template: `Name : <input [value]='name' (input)='name = $event.target.value'>
+  //          <br/>
+  //          You entered : {{name}}
+  //          `
+
+  template: `Name : <input [(ngModel)] = 'name'>
+            <br/>
+            You entered : {{name}}
+            `
              
 })
 export class AppComponent {
@@ -67,4 +77,8 @@ export class AppComponent {
   onClick(): void {
     console.log('Button Clicked');
   }
+
+  //Two Way Data Binding
+
+  name: string = 'Tom';
 }
