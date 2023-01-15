@@ -1,9 +1,9 @@
-h1{
+/*h1{
     color:#369;
     font-family: Arial, Arial, Helvetica, sans-serif;
     font-size: 250%;
 }
-
+*/
 /*table {
   color: #369;
   font-family: Arial, Arial, Helvetica, sans-serif;
@@ -15,3 +15,15 @@ td {
   border: 1px solid black;
 }
 */
+
+.boldClass{
+    font-weight: bold;
+}
+
+.italicsClass {
+  font-style: italic;
+}
+
+.colorClass {
+  color: red;
+}

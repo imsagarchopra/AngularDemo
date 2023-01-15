@@ -2,7 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  template: `<button class="colorClass" [class] ='classesToApply' > My Button </button>
+              <br/><br/>
+              <button class="colorClass" [class.boldClass] ='!applyBoldClass' > My Button </button>
+              <br/><br/>
+              <button class="colorClass" [ngClass] ='addClasses()' > My Button </button>
+            `
+  //templateUrl: 'app.component.html'
 })
 export class AppComponent {
   pageHeader: string = 'Employee Details';
@@ -12,5 +18,17 @@ export class AppComponent {
 
   getFullName(): string {
     return this.firstName + " " + this.lastName;
+  }
+
+  classesToApply: string = 'boldClass italicsClass';
+  applyBoldClass: boolean = true;;
+  applyItalicsClass: boolean = true;;
+
+  addClasses() {
+    let classes = {
+      boldClass: this.applyBoldClass,
+      italicsClass: this.applyItalicsClass
+    };
+    return classes;
   }
 }
