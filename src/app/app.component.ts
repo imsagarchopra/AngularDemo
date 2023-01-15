@@ -2,19 +2,27 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  //class Binding
   //template: `<button class="colorClass" [class] ='classesToApply' > My Button </button>
               //<br/><br/>
               //<button class="colorClass"d [class.boldClass] ='!applyBoldClass' > My Button </button>
               //<br/><br/>
               //<button class="colorClass" [ngClass] ='addClasses()' > My Button </button>
           //  `
+
   //templateUrl: 'app.component.html'
-  template: `<button style = 'color: red' [style.font-weight] = "isBold ? 'bold' : 'normal'">My Button</button>
-             <br/><br/>
-              <button style = 'color: red' [style.font-size.px] = "fontSize">My Button</button>
-              <br/><br/>
-              <button style = 'color: red' [ngStyle] = "addStyles()">My Button</button>
-            `
+
+  //style Binding
+  //template: `<button style = 'color: red' [style.font-weight] = "isBold ? 'bold' : 'normal'">My Button</button>
+  //           <br/><br/>
+  //            <button style = 'color: red' [style.font-size.px] = "fontSize">My Button</button>
+  //            <br/><br/>
+  //            <button style = 'color: red' [ngStyle] = "addStyles()">My Button</button>
+  //          `
+
+  //Event Binding
+  template: `<my-employee></my-employee>`
+            
              
 })
 export class AppComponent {
@@ -27,6 +35,7 @@ export class AppComponent {
     return this.firstName + " " + this.lastName;
   }
 
+  //Class Binding
   classesToApply: string = 'boldClass italicsClass';
   applyBoldClass: boolean = true;;
   applyItalicsClass: boolean = true;;
@@ -39,6 +48,7 @@ export class AppComponent {
     return classes;
   }
 
+  //Style Binding
   isBold: boolean = true;
   fontSize: number = 30;
   isItalics: boolean = true;
@@ -50,5 +60,11 @@ export class AppComponent {
       'font-weight': this.isBold ? 'bold' : 'normal',
     };
     return styles;
+  }
+
+  //Event Binding
+
+  onClick(): void {
+    console.log('Button Clicked');
   }
 }

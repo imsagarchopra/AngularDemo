@@ -14,7 +14,7 @@
   <thead>
     <tr>
       <th attr.colspan="{{columnSpan}}">Employee Details</th>
-      <th [attr.colspan]="columnSpan">Employee Details</th>
+      <!--<th [attr.colspan]="columnSpan">Employee Details</th>-->
     </tr>
   </thead>
   <tbody>
@@ -26,13 +26,17 @@
       <td>Last Name</td>
       <td>{{lastName}}</td>
     </tr>
-    <tr>
+    <tr *ngIf="showDetails">
       <td>Gender</td>
       <td>{{gender}}</td>
     </tr>
-    <tr>
+    <tr *ngIf="showDetails">
       <td>Age</td>
       <td>{{age}}</td>
     </tr>
   </tbody>
 </table>
+<br/>
+<button (click)="toggleDetails()">
+  {{showDetails ? 'Hide' : 'Show'}} Details
+</button>
