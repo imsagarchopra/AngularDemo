@@ -6,6 +6,6 @@
     "\\src\\app",
     "\\src\\app\\employee"
   ],
-  "SelectedNode": "\\src\\app\\employee\\employeeList.component.html",
+  "SelectedNode": "\\src\\app\\employee\\employeeCount.component.ts",
   "PreviewInSolutionExplorer": false
 }

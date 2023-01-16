@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'employee-count',
@@ -6,6 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['employeeCount.component.css']
   })
 export class EmployeeCountComponent {
+
+  selectedRadioButtonValue: string = 'All';
+
+  @Output()
+  countRadioButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();
+
   @Input()
     all!: number;
 
@@ -14,4 +20,9 @@ export class EmployeeCountComponent {
 
   @Input()
   female!: number;
+
+  onRadioButtonSelectionChange() {
+    this.countRadioButtonSelectionChanged.emit(this.selectedRadioButtonValue);
+    console.log(this.selectedRadioButtonValue);
+  }
 }

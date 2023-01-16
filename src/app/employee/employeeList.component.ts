@@ -57,4 +57,10 @@ export class EmployeeListComponent {
   getTotalFemaleEmployeesCount(): number {
     return this.employees.filter(e => e.gender === 'Female').length;
   }
+
+  selectedEmployeeCountRadioButton: string = 'All';
+
+  onEmployeeCountRadioButtonChange(selecteRadioButtonValue: string): void {
+    this.selectedEmployeeCountRadioButton = selecteRadioButtonValue;
+  }
 }
