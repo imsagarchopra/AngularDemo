@@ -9,13 +9,15 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employeeList.component';
 import { EmployeeTitlePipe } from './employee/employeeTitle.pipe';
 import { EmployeeCountComponent } from './employee/employeeCount.component';
+import { SimpleComponent } from './Others/simple.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     EmployeeListComponent,
     EmployeeTitlePipe,
-    EmployeeCountComponent
+    EmployeeCountComponent,
+    SimpleComponent
   ],
   imports: [
     BrowserModule,
