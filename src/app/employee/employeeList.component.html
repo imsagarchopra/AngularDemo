@@ -1,4 +1,4 @@
-<employee-count [all]="getTotalEmployeesCount()"
+<employee-count *ngIf="employees" [all]="getTotalEmployeesCount()"
                 [male]="getTotalMaleEmployeesCount()"
                 [female]="getTotalFemaleEmployeesCount()"
                 (countRadioButtonSelectionChanged) = "onEmployeeCountRadioButtonChange($event)">
@@ -36,7 +36,12 @@
         <td>{{isOdd}}</td>
       </tr>
     </ng-container>
-    <tr *ngIf="!employees || employees.length==0">
+    <tr *ngIf="!employees">
+      <td colspan="5">
+        Loading data. Please wait...
+      </td>
+    </tr>
+    <tr *ngIf="employees && employees.length==0">
       <td colspan="5">
         No employees to display
       </td>

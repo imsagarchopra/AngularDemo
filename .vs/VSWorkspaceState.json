@@ -4,8 +4,8 @@
     "\\.angular",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\employee",
     "\\src\\app\\Others"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
