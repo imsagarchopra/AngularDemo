@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
@@ -36,13 +37,24 @@ import { Component } from '@angular/core';
   //          `
 
   // NgFor
-  template: `<list-employee></list-employee>`
+  //template: `<list-employee></list-employee>`
 
   //Component LifeCycle Hooks
   //template: `Input : <input type = 'text' [(ngModel)] = 'userText'>
   //          <br/>
   //          <simple [simpleInput] = 'userText'></simple>
   //          `
+
+  //Routing
+  template: `
+              <div style="padding:5px">
+                <ul clas="nav nav-tabs">
+                  <li routerLinkActive="active"> <a routerLink="home">Home</a> </li>
+                  <li routerLinkActive="active"> <a routerLink="employees">Employees</a> </li>
+                </ul>
+                <router-outlet></router-outlet>
+              </div>
+            `
              
 })
 export class AppComponent {
