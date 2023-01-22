@@ -36,13 +36,13 @@ import { Component } from '@angular/core';
   //          `
 
   // NgFor
-  //template: `<list-employee></list-employee>`
+  template: `<list-employee></list-employee>`
 
   //Component LifeCycle Hooks
-  template: `Input : <input type = 'text' [(ngModel)] = 'userText'>
-            <br/>
-            <simple [simpleInput] = 'userText'></simple>
-            `
+  //template: `Input : <input type = 'text' [(ngModel)] = 'userText'>
+  //          <br/>
+  //          <simple [simpleInput] = 'userText'></simple>
+  //          `
              
 })
 export class AppComponent {
