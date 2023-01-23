@@ -14,10 +14,12 @@ import { EmployeeCountComponent } from './employee/employeeCount.component';
 import { SimpleComponent } from './Others/simple.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './Others/pageNotFound.component';
+import { EmployeeService } from './employee/employee.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'employees', component: EmployeeComponent },
+  { path: 'employees', component: EmployeeListComponent },
+  { path: 'employees/:code', component: EmployeeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -40,7 +42,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

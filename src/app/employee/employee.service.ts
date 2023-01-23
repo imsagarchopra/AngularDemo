@@ -24,4 +24,9 @@ export class EmployeeService {
     return this._http.get<IEmployee[]>("https://localhost:44392/api/Employees")
       .pipe(catchError((err: HttpErrorResponse) => throwError(() => err.message)));
   }
+
+  getEmployeeByCode(empCode: string): Observable<IEmployee> {
+    return this._http.get<IEmployee>("https://localhost:44392/api/Employees/" + empCode)
+      .pipe(catchError((err: HttpErrorResponse) => throwError(() => err.message)));
+  }
 }

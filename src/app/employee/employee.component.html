@@ -10,12 +10,12 @@
     border: 1px solid black;
   }
 </style>-->
-<table>
+<!--<table>
   <thead>
     <tr>
-      <th attr.colspan="{{columnSpan}}">Employee Details</th>
-      <!--<th [attr.colspan]="columnSpan">Employee Details</th>-->
-    </tr>
+      <th attr.colspan="{{columnSpan}}">Employee Details</th>-->
+<!--<th [attr.colspan]="columnSpan">Employee Details</th>-->
+<!--</tr>
   </thead>
   <tbody>
     <tr>
@@ -39,4 +39,39 @@
 <br/>
 <button (click)="toggleDetails()">
   {{showDetails ? 'Hide' : 'Show'}} Details
-</button>
+</button>-->
+
+<table *ngIf="employee">
+  <thead>
+    <tr>
+      <th colspan="2">
+        Employee Details
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Employee Code</td>
+      <td>{{employee.code}}</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{employee.name}}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{employee.gender}}</td>
+    </tr>
+    <tr>
+      <td>Annual Salary</td>
+      <td>{{employee.annualSalary}}</td>
+    </tr>
+    <tr>
+      <td>Date of Birth</td>
+      <td>{{employee.dateOfBirth}}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="!employee">
+  {{statusMessage}}
+</div>
