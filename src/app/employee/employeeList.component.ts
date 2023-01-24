@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserPreferencesService } from '../userPreferences.service';
 import { IEmployee } from './employee';
 import { EmployeeService } from './employee.service'
 
@@ -21,8 +22,16 @@ export class EmployeeListComponent implements OnInit {
   //  ];
   //}
 
-  constructor(private _employeeService: EmployeeService) {
+  constructor(private _employeeService: EmployeeService, private _userPreferencesService: UserPreferencesService) {
     
+  }
+
+  get color() {
+    return this._userPreferencesService.colorPreference;
+  }
+
+  set color(value: string) {
+    this._userPreferencesService.colorPreference = value;
   }
 
   ngOnInit() {

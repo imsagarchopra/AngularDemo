@@ -15,6 +15,7 @@ import { SimpleComponent } from './Others/simple.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './Others/pageNotFound.component';
 import { EmployeeService } from './employee/employee.service';
+import { TestModule } from './test.module';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     FormsModule, 
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { useHash: true })
+    RouterModule.forRoot(appRoutes, { useHash: true }),
+    TestModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
