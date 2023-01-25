@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './employee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from './employee.service';
+import { catchError, retry, retryWhen } from 'rxjs/operators';
 
 @Component({
   selector: 'my-employee',
@@ -34,7 +35,8 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
     let empCode: string = this._activatedRoute.snapshot.params['code'];
-    this._employeeService.getEmployeeByCode(empCode).subscribe(
+    this._employeeService.getEmployeeByCode(empCode).pipe(retry(3))
+      .subscribe(
       (employeeData) => {
         if (employeeData == null) {
           this.statusMessage = 'Employee with the specified Employee code does not exist';

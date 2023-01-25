@@ -5,9 +5,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\employee",
-    "\\src\\app\\home",
-    "\\src\\app\\Others"
+    "\\src\\app\\home"
   ],
-  "SelectedNode": "\\src\\app\\employee\\employee.component.ts",
+  "SelectedNode": "\\src\\app\\employee\\employee.service.ts",
   "PreviewInSolutionExplorer": false
 }
