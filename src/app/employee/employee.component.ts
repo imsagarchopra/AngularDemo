@@ -3,6 +3,7 @@ import { IEmployee } from './employee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from './employee.service';
 import { catchError, retry, retryWhen } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'my-employee',
@@ -24,6 +25,7 @@ export class EmployeeComponent implements OnInit {
 
   employee!: IEmployee;
   statusMessage: string = 'Loading data. Please wait...';
+  subscription!: Subscription;
 
   constructor(private _employeeService: EmployeeService, private _activatedRoute: ActivatedRoute, private _router: Router) {
 
@@ -35,7 +37,7 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
     let empCode: string = this._activatedRoute.snapshot.params['code'];
-    this._employeeService.getEmployeeByCode(empCode).pipe(retry(3))
+    this.subscription = this._employeeService.getEmployeeByCode(empCode).pipe(retry(3))
       .subscribe(
       (employeeData) => {
         if (employeeData == null) {
@@ -50,5 +52,10 @@ export class EmployeeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  onCancelButtonClick(): void {
+    this.statusMessage = "Request Cancelled";
+    this.subscription.unsubscribe();
   }
 }

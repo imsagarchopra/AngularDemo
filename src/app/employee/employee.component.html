@@ -77,5 +77,9 @@
 </div>
 
 <div style="margin-top:5px">
-  <input class="btn btn-primary" type="button" value="Back to Employees List" (click)="onBackButtonClick()"/>
+  <input class="btn btn-primary" type="button" value="Back to Employees List" (click)="onBackButtonClick()" />
+</div>
+
+<div style="margin-top:5px" *ngIf="!subscription.closed">
+  <input class="btn btn-primary" type="button" value="Cancel Request" (click)="onCancelButtonClick()" />
 </div>
