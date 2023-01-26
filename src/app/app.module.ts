@@ -17,13 +17,6 @@ import { PageNotFoundComponent } from './Others/pageNotFound.component';
 import { EmployeeService } from './employee/employee.service';
 import { TestModule } from './test.module';
 
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'employees', component: EmployeeListComponent },
-  { path: 'employees/:code', component: EmployeeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
-];
 
 @NgModule({
   declarations: [
@@ -41,7 +34,6 @@ const appRoutes: Routes = [
     FormsModule, 
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { useHash: true }),
     TestModule
   ],
   providers: [EmployeeService],
