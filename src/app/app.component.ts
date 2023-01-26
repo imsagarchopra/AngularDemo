@@ -1,6 +1,6 @@
-import { NgFor } from '@angular/common';
+//import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
