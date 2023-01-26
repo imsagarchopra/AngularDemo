@@ -58,22 +58,22 @@ import { AppRoutingModule } from './app-routing.module';
              
 })
 export class AppComponent {
-  pageHeader: string = 'Employee Details';
-  firstName: string = 'Tom';
-  lastName: string = 'Hopkins';
-  imagePath: string = "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png";
+  pageHeader = 'Employee Details';
+  firstName = 'Tom';
+  lastName = 'Hopkins';
+  imagePath = "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png";
 
   getFullName(): string {
     return this.firstName + " " + this.lastName;
   }
 
   //Class Binding
-  classesToApply: string = 'boldClass italicsClass';
-  applyBoldClass: boolean = true;;
-  applyItalicsClass: boolean = true;;
+  classesToApply = 'boldClass italicsClass';
+  applyBoldClass = true;
+  applyItalicsClass = true;
 
   addClasses() {
-    let classes = {
+    const classes = {
       boldClass: this.applyBoldClass,
       italicsClass: this.applyItalicsClass
     };
@@ -81,12 +81,12 @@ export class AppComponent {
   }
 
   //Style Binding
-  isBold: boolean = true;
-  fontSize: number = 30;
-  isItalics: boolean = true;
+  isBold = true;
+  fontSize = 30;
+  isItalics = true;
 
   addStyles() {
-    let styles = {
+    const styles = {
       'font-size.px': this.fontSize,
       'font-style': this.isItalics ? 'italic' : 'normal',
       'font-weight': this.isBold ? 'bold' : 'normal',
@@ -102,8 +102,8 @@ export class AppComponent {
 
   //Two Way Data Binding
 
-  name: string = 'Tom';
+  name = 'Tom';
 
   //Component Lifecycle Hooks
-  userText: string = 'Sagar';
+  userText = 'Sagar';
 }
