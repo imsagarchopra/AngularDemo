@@ -11,7 +11,7 @@ import { EmployeeService } from './employee.service'
 })
 export class EmployeeListComponent implements OnInit {
   employees!: IEmployee[];
-  statusMessage: string = 'Loading data. Please wait...';
+  statusMessage = 'Loading data. Please wait...';
 
   //constructor() {
   //  this.employees = [
@@ -84,7 +84,7 @@ export class EmployeeListComponent implements OnInit {
     return this.employees.filter(e => e.gender === 'Female').length;
   }
 
-  selectedEmployeeCountRadioButton: string = 'All';
+  selectedEmployeeCountRadioButton = 'All';
 
   onEmployeeCountRadioButtonChange(selecteRadioButtonValue: string): void {
     this.selectedEmployeeCountRadioButton = selecteRadioButtonValue;

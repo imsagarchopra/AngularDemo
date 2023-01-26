@@ -24,7 +24,7 @@ export class EmployeeComponent implements OnInit {
   //}
 
   employee!: IEmployee;
-  statusMessage: string = 'Loading data. Please wait...';
+  statusMessage = 'Loading data. Please wait...';
   subscription!: Subscription;
 
   constructor(private _employeeService: EmployeeService, private _activatedRoute: ActivatedRoute, private _router: Router) {
@@ -36,7 +36,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
-    let empCode: string = this._activatedRoute.snapshot.params['code'];
+    const empCode: string = this._activatedRoute.snapshot.params['code'];
     this.subscription = this._employeeService.getEmployeeByCode(empCode).pipe(retry(3))
       .subscribe(
       (employeeData) => {

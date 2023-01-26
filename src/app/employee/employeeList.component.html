@@ -22,7 +22,7 @@
   </thead>
   <tbody>
     <ng-container *ngFor="let employee of employees;trackBy:trackByEmpCode;let i = index; let isFirst = first; let isLast = last; let isEven = even; ; let isOdd = odd">
-      <tr *ngIf="selectedEmployeeCountRadioButton == 'All' || selectedEmployeeCountRadioButton == employee.gender">
+      <tr *ngIf="selectedEmployeeCountRadioButton === 'All' || selectedEmployeeCountRadioButton == employee.gender">
         <td>
           <a [routerLink]="['/employees', employee.code]">
             {{employee.code | uppercase}}
